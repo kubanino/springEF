@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UsersMyBatisRepository
 {
-    @SuppressWarnings({"SpringJavaAutowiredFieldsWarningInspection", "SpringJavaInjectionPointsAutowiringInspection"})
+    //@SuppressWarnings({"SpringJavaAutowiredFieldsWarningInspection", "SpringJavaInjectionPointsAutowiringInspection"})
     @Autowired
     private UsersMapper userMapper;
 

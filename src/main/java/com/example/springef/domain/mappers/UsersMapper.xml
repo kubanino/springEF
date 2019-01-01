@@ -1,0 +1,20 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.springef.domain.mappers.UsersMapper">
+
+    <resultMap type="com.example.springef.domain.model.User" id="userMap">
+        <constructor>
+            <idArg column="id" javaType="Long" name="id"/>
+            <arg column="name" javaType="String" name="name"/>
+            <arg column="surname" javaType="String" name="surname"/>
+            <arg column="email" javaType="String" name="email"/>
+        </constructor>
+    </resultMap>
+
+    <select id="getUser" resultMap="userMap">
+        SELECT * FROM ef_users WHERE id = #{userId}
+    </select>
+
+</mapper>
