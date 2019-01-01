@@ -27,4 +27,4 @@
 /.nb-gradle/
 
 #app specific
-*.properties
+/src/main/resources/application.properties
