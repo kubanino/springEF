@@ -89,6 +89,11 @@
             <artifactId>materializecss</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator</artifactId>
+            <version>0.30</version>
+        </dependency>
 
     </dependencies>
 
