@@ -12,6 +12,11 @@
     <li><span th:text="${anotherVariable}">nothing</span>
 </ul>
 
+<h1>Let's iterate over something from model:</h1>
+<ul>
+    <li th:each="element : ${listed}" th:text="${element}"></li>
+</ul>
+
 You are logged as:
 <li><span th:text="${userName}">nothing</span>
 </body>

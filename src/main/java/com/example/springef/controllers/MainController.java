@@ -5,7 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 import static com.example.springef.security.UserDetailsProvider.getCurrentUserName;
+import static java.util.Arrays.asList;
 
 @Controller
 public class MainController
@@ -26,6 +29,10 @@ public class MainController
         model.addAttribute("color", color);
         model.addAttribute("anotherVariable", paramWithDefault);
         model.addAttribute("message", "Greetings Dynamic Martians from Main Controller!");
+
+        List<String> simpleList = asList("one", "two", "five", "six");
+        model.addAttribute("listed", simpleList);
+
         return "dynamicTemplate";
     }
 }
