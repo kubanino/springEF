@@ -18,10 +18,13 @@ public class MainController
     }
 
     @RequestMapping("/dynamic")
-    public String dynamic(@RequestParam("color") String color, Model model)
+    public String dynamic(@RequestParam("color") String color,
+                          @RequestParam(required = false, defaultValue = "something") String paramWithDefault,
+                          Model model)
     {
         model.addAttribute("userName", getCurrentUserName());
         model.addAttribute("color", color);
+        model.addAttribute("anotherVariable", paramWithDefault);
         model.addAttribute("message", "Greetings Dynamic Martians from Main Controller!");
         return "dynamicTemplate";
     }
