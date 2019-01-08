@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head lang="pl">
-    <meta charset="UTF-8"/>
-    <title>Hello Dynamic Martians!</title>
-    <link href="/webjars/materializecss/1.0.0/css/materialize.css" type="text/css" rel="stylesheet"
-          media="screen,projection"/>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="common/defaultLayout">
 <body>
-<ul>
-    <li><span th:text="${message}">Greetings Martians!</span>
-    <li><span th:text="${userName}">I am da user!</span>
-    <li><span th:text="${color}">Default color</span>
-    <li><span th:text="${anotherVariable}">nothing</span>
-</ul>
+<div id="page" layout:fragment="content">
+    <ul>
+        <li><span th:text="${message}">Greetings Martians!</span>
+        <li><span th:text="${userName}">I am da user!</span>
+        <li><span th:text="${color}">Default color</span>
+        <li><span th:text="${anotherVariable}">nothing</span>
+    </ul>
 
-<h1>Let's iterate over something from model:</h1>
-<ul>
-    <li th:each="element : ${listed}" th:text="${element}"></li>
-</ul>
-
-You are logged as:
-<span th:text="${userName}">nothing</span>
-<script src="/webjars/jquery/3.3.1-1/jquery.js"></script>
-<script src="/webjars/materializecss/1.0.0/js/materialize.js"></script>
+    <h1>Let's iterate over something from model:</h1>
+    <ul>
+        <li th:each="element : ${listed}" th:text="${element}"></li>
+    </ul>
+</div>
 </body>
 </html>

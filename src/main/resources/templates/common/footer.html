@@ -2,6 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head></head>
 <body>
-<div th:fragment="footer">Some footer, that will be included everywhere...</div>
+<div th:fragment="footer">
+    You are logged as:
+    <span th:text="${userName} ? ${userName} : 'invalidUserName'"></span>
+    <script src="/webjars/jquery/3.3.1-1/jquery.js"></script>
+    <script src="/webjars/materializecss/1.0.0/js/materialize.js"></script>
+</div>
 </body>
 </html>
