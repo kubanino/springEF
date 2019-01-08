@@ -14,10 +14,11 @@ import static java.util.Arrays.asList;
 public class MainController
 {
     @RequestMapping("/")
-    public String indexTemplate()
+    public String indexTemplate(Model model)
     {
-        // TODO: i'm going for a template view - check me out!
-        return "indexTemplate";
+        model.addAttribute("metaTitle", "Home Page");
+
+        return "index";
     }
 
     @RequestMapping("/dynamic")
@@ -33,6 +34,6 @@ public class MainController
         List<String> simpleList = asList("one", "two", "five", "six");
         model.addAttribute("listed", simpleList);
 
-        return "dynamicTemplate";
+        return "index";
     }
 }
