@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<form th:fragment="search" action="/searchResult" method="post" class="col s12">
+    <div class="row center">
+        <i class="mdi-action-search prefix"></i>
+        <input id="search" name="search" type="text" class="validate"/>
+        <label for="search">Search for...</label>
+    </div>
+</form>
+</body>

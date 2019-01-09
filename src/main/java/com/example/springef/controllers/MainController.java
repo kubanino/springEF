@@ -3,8 +3,10 @@ package com.example.springef.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 import static com.example.springef.security.UserDetailsProvider.getCurrentUserName;
@@ -19,6 +21,15 @@ public class MainController
         model.addAttribute("metaTitle", "Home Page");
 
         return "index";
+    }
+
+    @RequestMapping(value = "/searchResult", method = RequestMethod.POST)
+    public String searchResult(HttpServletRequest request, Model model)
+    {
+        String inputString = request.getParameter("search");
+        model.addAttribute("inputString", inputString);
+
+        return "searchResult";
     }
 
     @RequestMapping("/dynamic")
