@@ -5,9 +5,13 @@
 <body>
 <div class="container">
     <nav th:replace="common/navigation :: navigation"></nav>
+    <div class="notifications">
+        <div id="error" class="card-panel red lighten-2" th:if="${error}">
+            <span class="card-title" th:text="${error}"></span>
+        </div>
+    </div>
     <div layout:fragment="content"></div>
     <div th:replace="common/footer :: footer"></div>
 </div>
-
 </body>
 </html>

@@ -28,6 +28,7 @@ public class MainController
     {
         String inputString = request.getParameter("search");
         model.addAttribute("inputString", inputString);
+        model.addAttribute("error", "test error message");
 
         return "searchResult";
     }
