@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -24,13 +25,20 @@ public class MainController
     }
 
     @RequestMapping(value = "/searchResult", method = RequestMethod.POST)
-    public String searchResult(HttpServletRequest request, Model model)
+    public String searchResult(HttpServletRequest request, RedirectAttributes redirectAttributes, Model model)
     {
         String inputString = request.getParameter("search");
         model.addAttribute("inputString", inputString);
         model.addAttribute("error", "test error message");
 
-        return "searchResult";
+        if (inputString.contains("Something bad, we will see"))
+        {
+            redirectAttributes.addFlashAttribute("error", "Something went wrong Man");
+            return "redirect:/";
+        }
+        redirectAttributes.addAttribute("search", inputString);
+
+        return "redirect:searchResult";
     }
 
     @RequestMapping("/dynamic")
