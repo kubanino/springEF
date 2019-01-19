@@ -1,5 +1,7 @@
 package com.example.springef.domain.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,5 +51,16 @@ public class ProfileForm
     public void setWishes(List<String> wishes)
     {
         this.wishes = wishes;
+    }
+
+    @Override
+    public String toString()
+    {
+        return new ToStringBuilder(this)
+                .append("name", name)
+                .append("email", email)
+                .append("birthDate", birthDate)
+                .append("wishes", wishes)
+                .toString();
     }
 }
