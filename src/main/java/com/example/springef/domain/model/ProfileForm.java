@@ -2,15 +2,27 @@ package com.example.springef.domain.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileForm
 {
+    @Size(min = 2)
     private String name;
+
+    @Email
+    @NotEmpty
     private String email;
+
+    @NotNull
     private LocalDate birthDate;
+
+    @NotEmpty
     private List<String> wishes = new ArrayList<>();
 
     public String getName()
