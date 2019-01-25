@@ -8,7 +8,7 @@
 <body>
 <div id="page" layout:fragment="content">
     <h5 class="indigo-text center teal-text text-darken-1">Preferences</h5>
-    <form th:action="@{/profile}" th:object="${profileForm}" method="post" class=" col m8 s12 offset-m2">
+    <form th:action="@{/profile}?lang=en" th:object="${profileForm}" method="post" class=" col m8 s12 offset-m2">
         <ul th:if="${#fields.hasErrors('*')}" class="errorList">
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Wrong input</li>
         </ul>
