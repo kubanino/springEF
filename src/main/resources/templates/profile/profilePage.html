@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="page" layout:fragment="content">
-    <h2 class="indigo-text center">Preferences</h2>
+    <h5 class="indigo-text center teal-text text-darken-1">Preferences</h5>
     <form th:action="@{/profile}" th:object="${profileForm}" method="post" class=" col m8 s12 offset-m2">
         <ul th:if="${#fields.hasErrors('*')}" class="errorList">
             <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Wrong input</li>
@@ -26,15 +26,15 @@
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <input th:placeholder="${dateFormat}" th:field="${profileForm.birthDate}"
-                       id="birthDate" type="text"  th:errorclass="invalid"/>
+                <input class="datepicker" th:placeholder="${dateFormat}" th:field="${profileForm.birthDate}"
+                       id="birthDate" type="text" th:errorclass="invalid"/>
                 <label for="birthDate">Birth date</label>
                 <div th:errors="*{birthDate}" class="red-text">Error</div>
             </div>
         </div>
         <div class="row s12">
-            <button class="btn waves-effect waves-light" input="submit" name="save">
-                Send<i class="small material-icons">send</i>
+            <button class="btn waves-effect waves-light  teal darken-1" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
             </button>
         </div>
     </form>

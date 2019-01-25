@@ -1,5 +1,6 @@
 package com.example.springef.domain.model;
 
+import com.example.springef.annotations.PastLocalDate;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import javax.validation.constraints.Email;
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class ProfileForm
 {
-    @Size(min = 2)
+    @Size(min = 2, message = "Type in correct name {0} with size from {2} to {1}")
     private String name;
 
     @Email
@@ -20,6 +21,7 @@ public class ProfileForm
     private String email;
 
     @NotNull
+    @PastLocalDate
     private LocalDate birthDate;
 
     @NotEmpty
