@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ProfileForm
 {
-    @Size(min = 2, message = "Type in correct name {0} with size from {2} to {1}")
+    @Size
     private String name;
 
     @Email
@@ -24,7 +24,7 @@ public class ProfileForm
     @PastLocalDate
     private LocalDate birthDate;
 
-    @NotEmpty
+    // @NotEmpty
     private List<String> wishes = new ArrayList<>();
 
     public String getName()
