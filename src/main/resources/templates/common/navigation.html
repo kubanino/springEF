@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-<nav th:fragment="navigation">
-    <div class="nav-wrapper teal darken-1">
-        <!--<a href="#" class="brand-logo">Logo</a>-->
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
-    </div>
-</nav>
+<div th:fragment="navigation">
+    <ul id="dropdown-lang" class="dropdown-content">
+        <li><a href="?lang=pl">PL</a></li>
+        <li><a href="?lang=en">EN</a></li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper teal darken-1">
+            <!--<a href="#" class="brand-logo">Logo</a>-->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Main</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/dynamic">Dynamic</a></li>
+                <li><a href="/static">Static</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#" data-target="dropdown-lang">Language<i
+                        class="material-icons right">arrow_drop_down</i></a></li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
 </body>

@@ -8,13 +8,22 @@
     <script src="/webjars/jquery/3.3.1-1/jquery.js"></script>
     <script src="/webjars/materializecss/1.0.0/js/materialize.js"></script>
     <script>
+        // datepickers
         var options = {
             format: 'yyyy-mm-dd'
         }
-
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.datepicker');
             var instances = M.Datepicker.init(elems, options);
+        });
+
+        // dropdowns
+        $(".dropdown-trigger").dropdown();
+
+        // alerts
+        $('#alert_close').click(function () {
+            $("#alert_box").fadeOut("slow", function () {
+            });
         });
     </script>
 </div>
