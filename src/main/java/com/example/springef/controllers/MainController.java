@@ -21,7 +21,15 @@ public class MainController
     {
         model.addAttribute("metaTitle", "Home Page");
 
-        return "index";
+        return "profile";
+    }
+
+    @RequestMapping("/main")
+    public String main(Model model)
+    {
+        model.addAttribute("metaTitle", "Home Page");
+
+        return "main";
     }
 
     @RequestMapping(value = "/searchResult", method = RequestMethod.POST)

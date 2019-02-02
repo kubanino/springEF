@@ -10,10 +10,11 @@
         <div class="nav-wrapper teal darken-1">
             <!--<a href="#" class="brand-logo">Logo</a>-->
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/">Main</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/dynamic">Dynamic</a></li>
-                <li><a href="/static">Static</a></li>
+                <!--- "${lang} != null ? @{/profile(lang=${lang})} : @{/profile}" -->
+                <li><a th:href="${lang} != null ? @{/main(lang=${lang})} : @{/main}">Main</a></li>
+                <li><a th:href="${lang} != null ? @{/profile(lang=${lang})} : @{/profile}">Profile</a></li>
+                <li><a th:href="${lang} != null ? @{/dynamic(lang=${lang})} : @{/dynamic}">Dynamic</a></li>
+                <li><a th:href="${lang} != null ? @{/static(lang=${lang})} : @{/static}">Static</a></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" href="#" data-target="dropdown-lang">Language<i
                         class="material-icons right">arrow_drop_down</i></a></li>

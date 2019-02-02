@@ -7,5 +7,4 @@ import org.springframework.context.annotation.Configuration;
 @MapperScan("com.example.springef.domain.mappers")
 public class PersistenceConfiguration
 {
-
 }

@@ -1,6 +1,7 @@
 package com.example.springef.configuration;
 
 import com.example.springef.formatters.USLocalDateFormatter;
+import com.example.springef.interceptors.CommonInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -25,6 +26,7 @@ public class WebConfiguration implements WebMvcConfigurer
     public void addInterceptors(InterceptorRegistry registry)
     {
         registry.addInterceptor(localeChangeInterceptor());
+        registry.addInterceptor(new CommonInterceptor());
     }
 
     @Bean
