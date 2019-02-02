@@ -42,12 +42,14 @@
 
         <div class="row">
             <div class="input-field col s6">
-                <input th:field="${profileForm.name}" id="name" type="text" th:errorclass="invalid"/>
+                <input th:field="${profileForm.name}" id="name" type="text" required="required"
+                       th:errorclass="invalid"/>
                 <label for="name">Name</label>
                 <div th:errors="*{name}" class="red-text">Error</div>
             </div>
             <div class="input-field col s6">
-                <input th:field="${profileForm.email}" id="email" type="text" th:errorclass="invalid"/>
+                <input th:field="${profileForm.email}" id="email" type="email" required="required"
+                       th:errorclass="invalid"/>
                 <label for="email">E-mail address</label>
                 <div th:errors="*{email}" class="red-text">Error</div>
             </div>
@@ -55,7 +57,7 @@
         <div class="row">
             <div class="input-field col s6">
                 <input class="datepicker" th:placeholder="${dateFormat}" th:field="${profileForm.birthDate}"
-                       id="birthDate" type="text" th:errorclass="invalid"/>
+                       id="birthDate" required="required" type="text" th:errorclass="invalid"/>
                 <label for="birthDate">Birth date</label>
                 <div th:errors="*{birthDate}" class="red-text">Error</div>
             </div>
