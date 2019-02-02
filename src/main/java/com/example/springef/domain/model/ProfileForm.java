@@ -27,6 +27,8 @@ public class ProfileForm
     // @NotEmpty
     private List<String> wishes = new ArrayList<>();
 
+    private List<String> tastes = new ArrayList<>();
+
     public String getName()
     {
         return name;
@@ -67,6 +69,16 @@ public class ProfileForm
         this.wishes = wishes;
     }
 
+    public List<String> getTastes()
+    {
+        return tastes;
+    }
+
+    public void setTastes(List<String> tastes)
+    {
+        this.tastes = tastes;
+    }
+
     @Override
     public String toString()
     {
@@ -75,6 +87,7 @@ public class ProfileForm
                 .append("email", email)
                 .append("birthDate", birthDate)
                 .append("wishes", wishes)
+                .append("tastes", tastes)
                 .toString();
     }
 }

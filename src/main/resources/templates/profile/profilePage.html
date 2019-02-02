@@ -60,10 +60,28 @@
                 <div th:errors="*{birthDate}" class="red-text">Error</div>
             </div>
         </div>
+        <fieldset class="row">
+            <legend th:text="#{tastes.legend}">What do You prefer?</legend>
+            <button class="btn teal" type="submit" name="addTaste" th:text="#{add.taste}">
+                Add preference<i class="mdi-content-add left"></i>
+            </button>
+        </fieldset>
         <div class="row s12">
             <button class="btn waves-effect waves-light  teal darken-1" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
             </button>
+            <div th:errors="*{tastes}" class="red-text">Error</div>
+            <div class="row" th:each="row,rowStat : *{tastes}">
+                <div class="col s6">
+                    <input type="text" th:field="*{tastes[__${rowStat.index}__]}"
+                           th:placeholder="#{taste.placeholder}"/>
+                </div>
+                <div class="col s6">
+                    <button class="btn red" type="submit" name="removeTaste" th:value="${rowStat.index}"
+                            th:text="#{remove}">Delete<i class="mdi-action-delete right waves-effect"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </form>
 </div>
