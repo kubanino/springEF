@@ -15,8 +15,8 @@
                 <div class="card red darken-1">
                     <div class="row">
                         <div class="col s12 m10">
-                            <div class="card-content white-text">The form contains following errors, please correct
-                                them.<br/>
+                            <div class="card-content white-text">
+                                <span th:text="#{formErrors}">Correct errors</span><br/>
                                 <ul class="errorList">
                                     <li th:each="err : ${#fields.errors('*')}" th:text="${err}">Wrong input</li>
                                 </ul>
@@ -65,11 +65,6 @@
             <button class="btn teal" type="submit" name="addTaste" th:text="#{add.taste}">
                 Add preference<i class="mdi-content-add left"></i>
             </button>
-        </fieldset>
-        <div class="row s12">
-            <button class="btn waves-effect waves-light  teal darken-1" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
             <div th:errors="*{tastes}" class="red-text">Error</div>
             <div class="row" th:each="row,rowStat : *{tastes}">
                 <div class="col s6">
@@ -82,6 +77,12 @@
                     </button>
                 </div>
             </div>
+        </fieldset>
+        <div class="row s12">
+            <button class="btn waves-effect waves-light  teal darken-1"
+                    th:text="#{save}" type="submit" name="save">Submit
+                <i class="material-icons right">send</i>
+            </button>
         </div>
     </form>
 </div>

@@ -14,6 +14,7 @@ import java.util.List;
 public class ProfileForm
 {
     @Size
+    @NotEmpty
     private String name;
 
     @Email
