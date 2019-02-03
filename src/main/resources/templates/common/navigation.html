@@ -11,15 +11,19 @@
             <!--<a href="#" class="brand-logo">Logo</a>-->
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <!--- "${lang} != null ? @{/profile(lang=${lang})} : @{/profile}" -->
-                <li><a th:href="${lang} != null ? @{/main(lang=${lang})} : @{/main}">Main</a></li>
-                <li><a th:href="${lang} != null ? @{/profile(lang=${lang})} : @{/profile}">Profile</a></li>
-                <li><a th:href="${lang} != null ? @{/dynamic(lang=${lang})} : @{/dynamic}">Dynamic</a></li>
-                <li><a th:href="${lang} != null ? @{/static(lang=${lang})} : @{/static}">Static</a></li>
-                <li><a th:href="${lang} != null ? @{/upload(lang=${lang})} : @{/upload}">Upload</a></li>
+                <li><a th:href="${lang} != null ? @{/main(lang=${lang})} : @{/main}">
+                    <span th:text="#{navigation.main}">Main</span></a></li>
+                <li><a th:href="${lang} != null ? @{/profile(lang=${lang})} : @{/profile}">
+                    <span th:text="#{navigation.profile}">Profile</span></a></li>
+                <li><a th:href="${lang} != null ? @{/dynamic(lang=${lang})} : @{/dynamic}">
+                    <span th:text="#{navigation.dynamic}">Dynamic</span></a></li>
+                <li><a th:href="${lang} != null ? @{/static(lang=${lang})} : @{/static}">
+                    <span th:text="#{navigation.static}">Static</span></a></li>
+                <li><a th:href="${lang} != null ? @{/upload(lang=${lang})} : @{/upload}">
+                    <span th:text="#{navigation.upload}">Upload</span></a></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" href="#" data-target="dropdown-lang">Language<i
                         class="material-icons right">arrow_drop_down</i></a></li>
-
             </ul>
         </div>
     </nav>
